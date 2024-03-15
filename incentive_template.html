@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Cedarville Cursive' rel='stylesheet'>
+  <title>Certificate Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    .background {
+      width: 970px;
+      height: 530px;
+      border-radius: 10px;
+      background: url('https://img.freepik.com/premium-vector/modern-simple-black-gold-abstract-background-suitable-business-card-presentation-flyer-brochure-print-certificate-template_181182-16593.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+
+    .certificate-container {
+      width: 500px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+      margin-left: 200px;
+    }
+
+    .title {
+      color: rgb(178, 162, 89);
+      font-size: 1.2rem;
+    }
+
+    .certificate-content,
+    .certificate_comp {
+      position: absolute;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .certificate-title {
+      font-family: 'Cedarville Cursive', cursive;
+      color: rgba(2, 0, 74, 0.894);
+      font-size: 60px;
+      font-weight: bold;
+      margin-left: 80px;
+      margin-top: 50px;
+    }
+
+    .content {
+      margin-top: 10px;
+      margin-left: 100px;
+      font-size: 14px;
+      font-weight: bolder;
+    }
+
+    .name-title {
+      color: #ff0000;
+      margin-top: 40px;
+      font-family: "Times New Roman", Times, serif;
+      font-weight: bolder;
+      font-size: 50px;
+      margin-left: 100px;
+    }
+
+    .company-name {
+      position: relative;
+      font-size: 1rem;
+      font-weight: bold;
+      margin-right: -250px;
+      float: right;
+    }
+
+    .awarded {
+      margin-top: -35px;
+    }
+
+    .Awarded {
+      width: 225px;
+      background-color: rgb(223, 203, 113);
+      padding: 8px;
+      border: 2px solid #000;
+      border-radius: 5px;
+      text-align: center;
+      height: 25px;
+      margin-left: 170px;
+    }
+
+@media screen and (max-width: 768px) {
+  .background {
+    width: 700px;
+    height: 550px;
+    position: relative;
+  }
+
+  .employee {
+    margin-top: 50px;
+  }
+
+  .certificate-container {
+    position: relative;
+    margin-left: 80px; 
+  }
+
+  .certificate-title {
+    position: relative;
+    margin-top: 75px;
+    font-size: 3rem;
+    /* margin-right: 50px; */
+  }
+
+  .content {
+    position: relative;
+    font-size: 15px;
+    margin-top: 60px;
+
+  }
+
+  .name-title {
+    position: relative;
+    font-size: 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .company-name {
+    font-size: 1rem;
+    font-weight: bold;
+    float: right;
+    margin-right: 30px;
+  }
+
+  .Awarded {
+    position: relative;
+    margin-top: -40px;
+    margin-bottom: -100px;
+    font-size: small;
+    width: 200px;
+    height: 15px;
+    padding: 0;
+    margin-left: 190px;
+  }
+}
+  </style>
+</head>
+
+
+<body>
+  <div class="background">
+    <div class="certificate-container">
+      <div class="certificate-content">
+        <div class="certificate">
+          <h1 class="certificate-title">Certificate
+            <span class="title">of Excellence</span>
+          </h1>
+          <div class="awarder">
+            <h2 class="Awarded">
+              Proudly Awarded to
+            </h2>
+          </div>
+
+        </div>
+        <div class="employee">
+          <div class="name-title">
+            <div class="employee">
+              <div class="name-title">
+                  {{employeeName}}
+              </div>
+          </div>
+          
+          </div>
+        </div>
+
+        <div class="content">
+          <p>
+            We are pleased to inform you that you have been recognized for your outstanding performance. <br>
+                    Your dedication and hard work have not gone unnoticed!
+          </p>
+        </div>
+        <div class="certificate_comp">
+        </div>
+      </div>
+    </div>
+    <span class="company-name" ><span style="color: red;">KEEN</span> & ABLE COMPUTERS PVT. LTD.</span>
+  </div>
+</body>
+
+</html>

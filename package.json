@@ -1,0 +1,20 @@
+{
+  "name": "incentive-automated-mail-js",
+  "version": "1.0.0",
+  "description": "Send Automated Mail Using PostgreSQL Database",
+  "main": "email.js",
+  "scripts": {
+    "test": "N/A"
+  },
+  "keywords": [
+    "rahuljaat"
+  ],
+  "author": "Rahul Ahlawat",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.12",
+    "pg": "^8.11.3"
+  }
+}
