@@ -4,9 +4,7 @@ require('dotenv').config({ path: './password.env' });
 const nodemailer = require('nodemailer');
 const fs = require('fs');
 const { Client } = require('pg');
-const cron = require ('node-cron');
-
-function runeveryminute(){
+const cron = require('node-cron');
 
 const client = new Client({
     user: process.env.DB_USER,
@@ -15,7 +13,6 @@ const client = new Client({
     password: process.env.DB_PASS,
     port: process.env.DB_PORT
 });
-
 
 // Get the current month dynamically
 const today = new Date();
@@ -53,8 +50,10 @@ client.connect()
 // Function to retrieve incentive details for the current month from the database
 async function getDataForCurrentMonth(currentMonth) {
     try {
+
         // Define your SQL query to fetch incentive details for the current month
-        const query = `SELECT * FROM employee_data WHERE EXTRACT(MONTH FROM date) = $1`;
+        const query = `SELECT * FROM employee_data WHERE EXTRACT(MONTH FROM "Date") = $1`;
+
 
         // Execute the query with the current month parameter
         const { rows } = await client.query(query, [currentMonth]);
@@ -69,8 +68,8 @@ function sendIndividualEmails(data, currentMonth) {
     const promises = [];
     for (let i = 0; i < data.length; i++) {
         const employeeData = data[i];
-        const employeeEmail = employeeData.email;
-        const employeeName = employeeData.name;
+        const employeeEmail = employeeData.Email; // Corrected property name
+        const employeeName = employeeData.Name; // Corrected property name
         console.log('Sending individual email to:', employeeEmail, 'with name:', employeeName);
 
         // Compose email subject and body
@@ -159,6 +158,7 @@ function composeConsolidatedEmailBody(data, currentMonth) {
                         <tr>
                             <th style="width: 50px;">S.No.</th>
                             <th>Employee Name</th>
+                            <th>Reason</th>
                             <th>Email</th>
                         </tr>
                     </thead>
@@ -166,12 +166,14 @@ function composeConsolidatedEmailBody(data, currentMonth) {
     `;
     for (let i = 0; i < data.length; i++) {
         const srNo = i + 1;
-        const employeeName = data[i].name;
-        const employeeEmail = data[i].email;
+        const employeeName = data[i].Name; // Corrected property name
+        const employeeEmail = data[i].Email; // Corrected property name
+        const reason = data[i].Reason; // Assuming there's a 'Reason' field in the data
         body += `
             <tr>
                 <td>${srNo}</td>
                 <td>${employeeName}</td>
+                <td>${reason}</td>
                 <td>${employeeEmail}</td>
             </tr>
         `;
@@ -221,9 +223,3 @@ function getMonthName(monthNumber) {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     return months[monthNumber - 1];
 }
-}
-
-cron.schedule('* * * * *',() =>{
-    runeveryminute()
-
-});

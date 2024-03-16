@@ -64,11 +64,10 @@
 
     .name-title {
       color: #ff0000;
-      margin-top: 40px;
       font-family: "Times New Roman", Times, serif;
       font-weight: bolder;
       font-size: 50px;
-      margin-left: 100px;
+      margin-left: 75px;
     }
 
     .company-name {
@@ -94,63 +93,66 @@
       margin-left: 170px;
     }
 
-@media screen and (max-width: 768px) {
-  .background {
-    width: 700px;
-    height: 550px;
-    position: relative;
-  }
+    @media screen and (max-width: 768px) {
+      .background {
+        width: 700px;
+        height: 550px;
+        position: relative;
+      }
 
-  .employee {
-    margin-top: 50px;
-  }
+      .employee {
+        margin-top: 150px;
+      }
 
-  .certificate-container {
-    position: relative;
-    margin-left: 80px; 
-  }
+      .certificate-container {
+        position: relative;
+        margin-left: 80px;
+        margin-top: 30px;
+      }
 
-  .certificate-title {
-    position: relative;
-    margin-top: 75px;
-    font-size: 3rem;
-    /* margin-right: 50px; */
-  }
+      .certificate-title {
+        position: relative;
+        margin-top: 75px;
+        font-size: 3rem;
+        /* margin-right: 50px; */
+      }
 
-  .content {
-    position: relative;
-    font-size: 15px;
-    margin-top: 60px;
+      .content {
+        position: relative;
+        font-size: 15px;
+        margin-top: 60px;
 
-  }
+      }
 
-  .name-title {
-    position: relative;
-    font-size: 2rem;
-  }
+      .name-title {
+        margin-right: 20x;
+        margin-top: 100px;
+        position: relative;
+        font-size: 2rem;
+      }
 
-  .title {
-    font-size: 2rem;
-  }
+      .title {
+        font-size: 2rem;
+      }
 
-  .company-name {
-    font-size: 1rem;
-    font-weight: bold;
-    float: right;
-    margin-right: 30px;
-  }
+      .company-name {
+        font-size: 1rem;
+        font-weight: bold;
+        float: right;
+        margin-right: 30px;
+      }
 
-  .Awarded {
-    position: relative;
-    margin-top: -40px;
-    margin-bottom: -100px;
-    font-size: small;
-    width: 200px;
-    height: 15px;
-    padding: 0;
-    margin-left: 190px;
-  }
-}
+      .Awarded {
+        position: relative;
+        margin-top: -40px;
+        margin-bottom: -100px;
+        font-size: small;
+        width: 200px;
+        height: 15px;
+        padding: 0;
+        margin-left: 190px;
+      }
+    }
   </style>
 </head>
 
@@ -168,30 +170,26 @@
               Proudly Awarded to
             </h2>
           </div>
+<br>
+        </div>
+        <span class="employee">
+          <span class="name-title">
+                {{employeeName}}
+          </span>
+        </span>
 
-        </div>
-        <div class="employee">
-          <div class="name-title">
-            <div class="employee">
-              <div class="name-title">
-                  {{employeeName}}
-              </div>
-          </div>
-          
-          </div>
-        </div>
 
         <div class="content">
           <p>
             We are pleased to inform you that you have been recognized for your outstanding performance. <br>
-                    Your dedication and hard work have not gone unnoticed!
+            Your dedication and hard work have not gone unnoticed!
           </p>
         </div>
         <div class="certificate_comp">
         </div>
       </div>
     </div>
-    <span class="company-name" ><span style="color: red;">KEEN</span> & ABLE COMPUTERS PVT. LTD.</span>
+    <span class="company-name"><span style="color: red;">KEEN</span> & ABLE COMPUTERS PVT. LTD.</span>
   </div>
 </body>
 
